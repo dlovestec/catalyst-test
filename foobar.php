@@ -26,13 +26,12 @@
 	}
 	/* for loop method */
 	
-	echo "<br/><br/>";
+	//echo "<br/><br/>";
 	
 	/* while loop method */
-	$counter = 1;
+	/*$counter = 1;
 	
 	while($counter <= 100) {
-		
 		switch($counter) {
 			case ($counter%3 == 0 && $counter%5 == 0):
 				echo "foobar,";
@@ -47,8 +46,7 @@
 				echo $counter.",";
 				break;
 		}
-		
 		$counter++;
-	}
+	}*/
 	/* while loop method */
 ?>
