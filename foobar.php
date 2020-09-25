@@ -11,16 +11,16 @@
 	for($counter = 1; $counter <= 100; $counter++) {
 		switch($counter) {
 			case ($counter%3 == 0 && $counter%5 == 0):
-				echo "foobar,";
+				echo "foobar, ";
 				break;
 			case ($counter%3 == 0):
-				echo "foo,";
+				echo "foo, ";
 				break;
 			case ($counter%5 ==0):
-				echo "bar,";
+				echo "bar, ";
 				break;
 			default:
-				echo $counter.",";
+				echo $counter.", ";
 				break;
 		}
 	}
@@ -34,16 +34,16 @@
 	while($counter <= 100) {
 		switch($counter) {
 			case ($counter%3 == 0 && $counter%5 == 0):
-				echo "foobar,";
+				echo "foobar, ";
 				break;
 			case ($counter%3 == 0):
-				echo "foo,";
+				echo "foo, ";
 				break;
 			case ($counter%5 ==0):
-				echo "bar,";
+				echo "bar, ";
 				break;
 			default:
-				echo $counter.",";
+				echo $counter.", ";
 				break;
 		}
 		$counter++;
