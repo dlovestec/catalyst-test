@@ -8,7 +8,6 @@
 	*/
 
 	/* for loop method */
-	
 	for($counter = 1; $counter <= 100; $counter++) {
 		switch($counter) {
 			case ($counter%3 == 0 && $counter%5 == 0):
@@ -25,6 +24,31 @@
 				break;
 		}
 	}
-	
 	/* for loop method */
+	
+	echo "<br/><br/>";
+	
+	/* while loop method */
+	$counter = 1;
+	
+	while($counter <= 100) {
+		
+		switch($counter) {
+			case ($counter%3 == 0 && $counter%5 == 0):
+				echo "foobar,";
+				break;
+			case ($counter%3 == 0):
+				echo "foo,";
+				break;
+			case ($counter%5 ==0):
+				echo "bar,";
+				break;
+			default:
+				echo $counter.",";
+				break;
+		}
+		
+		$counter++;
+	}
+	/* while loop method */
 ?>
