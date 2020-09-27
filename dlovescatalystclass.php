@@ -19,7 +19,7 @@
 			
 			if (mysqli_connect_errno())
 			{
-				echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				fprintf(STDERR, "Failed to connect to MySQL: ".mysqli_connect_error());
 				exit;
 			}
 
@@ -48,9 +48,9 @@
 			$createtable = " CREATE TABLE `users`(`name` VARCHAR(255) NOT NULL,`surname` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL) ENGINE = MyISAM AUTO_INCREMENT = 0 DEFAULT CHARSET = utf8;";
 				
 			if ($this->connection->query($createtable) === TRUE) {
-				echo "Table Users created successfully";
+				fprintf(STDOUT, "Table Users created successfully");
 			} else {
-				echo "Error creating table: " . $this->connection->error;
+				fprintf(STDERR, "Error creating table: ".$this->connection->error);
 			}
 		}
 		
@@ -137,30 +137,19 @@
 					continue;
 				}
 				
-				$name = "";
-				if (isset($column[0])) {
-					$name = mysqli_real_escape_string($this->connection, $column[0]);
-				}
-				
-				$surname = "";
-				if (isset($column[1])) {
-					$surname = mysqli_real_escape_string($this->connection, $column[1]);
-				}
-				
-				$email = "";
-				if (isset($column[2])) {
-					$email = mysqli_real_escape_string($this->connection, $column[2]);
-				}
-			
+				$name = isset($column[0]) ? mysqli_real_escape_string($this->connection, $column[0]) : "";
+				$surname = isset($column[1]) ? mysqli_real_escape_string($this->connection, $column[1]) : "";
+				$email = isset($column[2]) ? mysqli_real_escape_string($this->connection, $column[2]) : "";
+
 				if($this->checkEmail($email) !== FALSE) {
 					$insert.="insert into users (`name`,`surname`,`email`) values ('".ucfirst(strtolower($name))."','".ucfirst(strtolower($surname))."','".strtolower($email)."');";
 				}
 			}
 			
 			if (mysqli_multi_query($this->connection, $insert)) {
-				echo "New records created successfully";
+				fprintf(STDOUT, "New records created successfully");
 			} else {
-				echo "Error: " . $insert . "<br>" . mysqli_error($this->connection);
+				fprintf(STDERR, "Error: ".$insert."\n".$this->connection->error);
 			}
 		}
 	}
