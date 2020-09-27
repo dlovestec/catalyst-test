@@ -149,6 +149,6 @@
 		printf("\nExample: php user_upload.php --file -f CSVFilePath -h MySQL Host -u MySQL User -p MySQL Password");
 		printf("\nExample: php user_upload.php --dry_run -f CSVFilePath -h MySQL Host -u MySQL User -p MySQL Password");
 		printf("\nExample: php user_upload.php --create_table -h MySQL Host -u MySQL User -p MySQL Password");
-		printf("\nExample: php user_upload.php --help asdasd");
+		printf("\nExample: php user_upload.php --help");
 	}
 ?>
