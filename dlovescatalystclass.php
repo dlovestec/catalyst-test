@@ -1,4 +1,11 @@
 <?php
+
+	/*
+		Author	: 	Dharmesh Chaudhary
+		E-mail	: 	chaudharydharmesh32@gmail.com
+		File	:	dlovescatalystclass.php
+	*/
+
 	class DlovesCatalyst
 	{
 		private $host;
