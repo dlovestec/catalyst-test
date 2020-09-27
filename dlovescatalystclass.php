@@ -95,9 +95,33 @@
 				$row++;
 			}
 			
-			echo "<pre>";
-			print_r($validrecords);
-			print_r($invalidrecords);
+			if(empty($validrecords)) {
+				fprintf(STDOUT, "No valid records found!\n\n");
+			} else {
+				
+				fprintf(STDOUT, "Valid Records!\n\n");
+				$mask = "|%5.5s |%-5.5s | %-30.30s | x |\n";
+				printf($mask, 'Name', 'Surname','E-mail');
+				
+				foreach($validrecords as $validrecords) {
+					printf($mask, $validrecords['name'], $validrecords['surname'], $validrecords['email']);
+				}
+			}
+			
+			fprintf(STDOUT, "\n\n");
+			
+			if(empty($invalidrecords)) {
+				fprintf(STDOUT, "No invalid records found!\n\n");
+			} else {
+				
+				fprintf(STDOUT, "Invalid Records!\n\n");
+				$mask = "|%5.5s |%-5.5s | %-30.30s | x |\n";
+				printf($mask, 'Name', 'Surname','E-mail');
+				
+				foreach($invalidrecords as $invalidrecords) {
+					printf($mask, $invalidrecords['name'], $invalidrecords['surname'], $invalidrecords['email']);
+				}
+			}
 		}
 		
 		public function parseCSV($path)
