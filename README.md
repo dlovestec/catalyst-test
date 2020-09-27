@@ -20,14 +20,14 @@ For Ubuntu Instance:
 
 **Options:**
 
--f "Name of the CSV file to be parsed with full path"
--h "MySQL Host"
--u "MySQL User"
--p "MySQL Password"
---file "Parse the CSV and inserts data into database"
---create_table "Create MySQL users table"
---dry_run "Run script without inserting into database"
---help "Help"
+- -f "Name of the CSV file to be parsed with full path"
+- -h "MySQL Host"
+- -u "MySQL User"
+- -p "MySQL Password"
+- --file "Parse the CSV and inserts data into database"
+- --create_table "Create MySQL users table"
+- --dry_run "Run script without inserting into database"
+- --help "Help"
 
 - Example: php user_upload.php --file -f CSVFilePath -h MySQL Host -u MySQL User -p MySQL Password
 - Example: php user_upload.php --dry_run -f CSVFilePath -h MySQL Host -u MySQL User -p MySQL Password
