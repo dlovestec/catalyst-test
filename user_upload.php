@@ -28,10 +28,11 @@
 					fprintf(STDERR, "Please enter MySQL user name");
 					exit;
 				}
-				/*if (empty($password)) {
+				/* If your MySQL Password is blank then comment out this condition */
+				if (empty($password)) {
 					fprintf(STDERR, "Please enter MySQL password");
 					exit;
-				}*/
+				}
 				
 				$configuration = array(
 					"host" => $host,
@@ -59,10 +60,11 @@
 					fprintf(STDERR, "Please enter MySQL user name");
 					exit;
 				}
-				/*if (empty($password)) {
+				/* If your MySQL Password is blank then comment out this condition */
+				if (empty($password)) {
 					fprintf(STDERR, "Please enter MySQL password");
 					exit;
-				}*/
+				}
 				
 				$configuration = array(
 					"host" => $host,
@@ -85,10 +87,11 @@
 					fprintf(STDERR, "Please enter MySQL user name");
 					exit;
 				}
-				/*if (empty($password)) {
+				/* If your MySQL Password is blank then comment out this condition */
+				if (empty($password)) {
 					fprintf(STDERR, "Please enter MySQL password");
 					exit;
-				}*/
+				}
 				
 				$configuration = array(
 					"host" => $host,
